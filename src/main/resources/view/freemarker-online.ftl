@@ -71,7 +71,7 @@ someList = ["JSON", "syntax", 1, 2, 3 ]
 someMap = { "JSON syntax": true, "nestedList": [1, 2, 3] }
 someXML = &lt;example x="1"&gt;text&lt;/example&gt;</pre>
                 <textarea id="dataModel" name="dataModel" class="pure-input-1 source-code"
-                        placeholder='Enter one or more assignments (e.g., user = John Doe), starting each in its own line.'
+                        placeholder='Enter one or more assignments (e.g., form_component_1 = John Doe), starting each in its own line.'
                 >${dataModel}</textarea>
                 <span id="error" class="errorMessage">Template cannot be empty</span>
                 <div class="formBottomButtonsContainer">

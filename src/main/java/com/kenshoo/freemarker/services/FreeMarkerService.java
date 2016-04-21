@@ -89,6 +89,7 @@ public class FreeMarkerService {
         freeMarkerConfig.setNewBuiltinClassResolver(TemplateClassResolver.ALLOWS_NOTHING_RESOLVER);
         freeMarkerConfig.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
         freeMarkerConfig.setLogTemplateExceptions(false);
+        freeMarkerConfig.setTagSyntax(Configuration.SQUARE_BRACKET_TAG_SYNTAX);
         freeMarkerConfig.setLocale(Locale.US);
         freeMarkerConfig.setTimeZone(TimeZone.getTimeZone("America/Los_Angeles"));
         freeMarkerConfig.setOutputEncoding("UTF-8");
@@ -298,7 +299,7 @@ public class FreeMarkerService {
                     throw new FreeMarkerServiceException("Unexpected exception during template evaluation", e);
                 }
                 
-                return new FreeMarkerServiceResponse.Builder().buildForSuccess(writer.toString(), resultTruncated);
+                return new FreeMarkerServiceResponse.Builder().buildForSuccess(writer.toString().trim(), resultTruncated);
             } finally {
                 synchronized (this) {
                     taskEnded = true;
