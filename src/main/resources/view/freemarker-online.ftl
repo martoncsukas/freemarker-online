@@ -37,31 +37,31 @@
         });
     </script>
     
-    <title>Online FreeMarker Template Tester</title>
+    <title>FreeMarker Expression Tester</title>
 </head>
-<body>
+<body background="http://www.mobizio.com/images/login-mobizio-bg.jpg" style="background-size: cover">
 <div id="layout">
     <div id="main">
         <div class="header">
-            <h1>Online FreeMarker Template Tester</h1>
+            <h1 style="font-weight: bold; color:white; font-size: 35px">FreeMarker Expression Tester</h1>
         </div>
 
         <div class="content">
             <form id="templateAndModelForm" method="post" class="pure-form pure-form-stacked">
-                <label for="template">Template <span class="faint">(FreeMarker ${freeMarkerVersion})</span></label>
+                <label for="template" style="color:white">Expression <span class="faint">(FreeMarker ${freeMarkerVersion})</span></label>
                 <textarea id="template" name="template" class="pure-input-1 source-code"
-                        placeholder="Enter template, like: Hello ${r'${user}'}!"
+                        placeholder="Enter expression, like: Hello ${r'${form_component_1}'}!"
                 >${template}</textarea>
     
-                <label for="template">
-                    Data model
-                    (<a id="showHideDataModelExamples" href="#" tabindex="-1"><!--
+                <label for="template" style="color:white">
+                    Data model components
+                    (<a id="showHideDataModelExamples" href="#" style="color:#bbb" tabindex="-1"><!--
                     --><span id="showDataModelExamplesLabel">show</span><!--
                     --><span id="hideDataModelExamplesLabel" class="hiddenByDefault">hide</span>
                     examples</a>)
                 </label>
-                <pre id="dataModelExamples" class="hiddenByDefault">someString = Some value
-otherString = "JSON\nsyntax"
+                <pre id="dataModelExamples" class="hiddenByDefault">form_component_1 = Some value
+form_component_2 = "JSON\nsyntax"
 someNumber = 3.14
 someBoolean = true
 someDate = 2014-02-28
@@ -79,29 +79,26 @@ someXML = &lt;example x="1"&gt;text&lt;/example&gt;</pre>
 	                &nbsp; <span class="faint">Ctrl+Enter in input fields will submit this form too</span>
                 </div>
                 <div style="display:none" class="resultContainer">
-                    <label for="result">Result</label>
+                    <label for="result" style="color:white">Result</label>
                     <textarea id="result" class="pure-input-1 source-code" readonly></textarea>
                 </div>
 
             </form>
         </div><!-- content -->
         
-        <div class="footer">
+        <div class="footer" style="color: #bbb">
             FreeMarker documentation:
-            <a href="http://freemarker.org/docs/" target="_blank">Contents</a>
+            <a href="http://freemarker.org/docs/" target="_blank" style="color: #bbb">Contents</a>
             |
-            <a href="http://freemarker.org/docs/dgui_template_overallstructure.html" target="_blank">Overall&nbsp;syntax</a>
+            <a href="http://freemarker.org/docs/dgui_template_overallstructure.html" target="_blank" style="color: #bbb">Overall&nbsp;syntax</a>
             |
-            <a href="http://freemarker.org/docs/dgui_template_exp.html#exp_cheatsheet" target="_blank">Expression&nbsp;syntax</a>
+            <a href="http://freemarker.org/docs/dgui_template_exp.html#exp_cheatsheet" target="_blank" style="color: #bbb">Expression&nbsp;syntax</a>
             |
-            <a href="http://freemarker.org/docs/ref_directive_alphaidx.html" target="_blank">List&nbsp;of&nbsp;&lt;#<i>directives</i>&gt;</a>
+            <a href="http://freemarker.org/docs/ref_directive_alphaidx.html" target="_blank" style="color: #bbb">List&nbsp;of&nbsp;&lt;#<i>directives</i>&gt;</a>
             |
-            <a href="http://freemarker.org/docs/ref_builtins_alphaidx.html" target="_blank">List&nbsp;of&nbsp;<tt>?<i>built_in</i></tt> functions</a>
+            <a href="http://freemarker.org/docs/ref_builtins_alphaidx.html" target="_blank" style="color: #bbb">List&nbsp;of&nbsp;<tt>?<i>built_in</i></tt> functions</a>
         </div><!-- footer -->
     </div><!-- main -->
-    
-    <!-- Fork me on GitHub: -->
-    <a href="https://github.com/kenshoo/freemarker-online" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 </div><!-- layout -->
 </body>
 </html>

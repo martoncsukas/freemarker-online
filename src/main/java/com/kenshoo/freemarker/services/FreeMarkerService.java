@@ -96,6 +96,8 @@ public class FreeMarkerService {
     }
     
     /**
+     * @param templateSourceCode 
+     * @param dataModel 
      * @return The result of the template parsing and evaluation. The method won't throw exception if that fails due to
      *         errors in the template provided, instead it indicates this fact in the response object. That's because
      *         this is a service for trying out the template language, so such errors are part of the normal operation.
@@ -208,6 +210,7 @@ public class FreeMarkerService {
 
     /**
      * Returns the time zone used by the FreeMarker templates.
+     * @return TimeZone
      */
     public TimeZone getFreeMarkerTimeZone() {
         return freeMarkerConfig.getTimeZone();
@@ -237,7 +240,7 @@ public class FreeMarkerService {
         
         private boolean templateExecutionStarted;
         private Thread templateExecutorThread;
-        private final String templateSourceCode;
+        private String templateSourceCode;
         private final Object dataModel;
         private boolean taskEnded;
 
@@ -251,6 +254,10 @@ public class FreeMarkerService {
             try {
                 Template template;
                 try {
+                  
+                    if (!templateSourceCode.contains("${") && !templateSourceCode.startsWith("["))
+                      templateSourceCode = "[#if " + templateSourceCode + "]" + "true" + "[#else]" + "false" + "[/#if]";
+                  
                     template = new Template(null, templateSourceCode, freeMarkerConfig);
                 } catch (ParseException e) {
                     // Expected (part of normal operation)
